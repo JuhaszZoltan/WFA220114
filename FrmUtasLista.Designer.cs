@@ -82,6 +82,7 @@
             this.dgvUtasLista.Name = "dgvUtasLista";
             this.dgvUtasLista.Size = new System.Drawing.Size(756, 244);
             this.dgvUtasLista.TabIndex = 1;
+            this.dgvUtasLista.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvUtasLista_RowHeaderMouseClick);
             // 
             // groupBox2
             // 

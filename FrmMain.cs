@@ -48,9 +48,9 @@ namespace WFA220114
         }
 
         private void TsmiSzerkesztes_Click(object sender, EventArgs e)
-            => new FrmUtas().ShowDialog();
+            => new FrmUtas(null, null, null, null).ShowDialog();
 
         private void TsmiKereses_Click(object sender, EventArgs e)
-            => new FrmUtasLista().ShowDialog();
+            => new FrmUtasLista(false, null).ShowDialog();
     }
 }

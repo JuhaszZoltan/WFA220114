@@ -13,8 +13,12 @@ namespace WFA220114
 {
     public partial class FrmUtasLista : Form
     {
-        public FrmUtasLista()
+        private FrmUtas FrmUtas { get; set; }
+        private bool Szerkesztheto { get; set; } = false;
+        public FrmUtasLista(bool szerkesztheto, FrmUtas frmUtas)
         {
+            Szerkesztheto = szerkesztheto;
+            FrmUtas = frmUtas;
             InitializeComponent();
         }
 
@@ -56,5 +60,17 @@ namespace WFA220114
 
         private void TbCelSzures_TextChanged(object sender, EventArgs e)
             => Lekerdezes();
+
+        private void DgvUtasLista_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (Szerkesztheto)
+            {
+                FrmUtas.tbUtasKod.Text = dgvUtasLista[0, e.RowIndex].Value.ToString();
+                FrmUtas.tbNev.Text = dgvUtasLista[1, e.RowIndex].Value.ToString();
+                FrmUtas.rtbCim.Text = dgvUtasLista[2, e.RowIndex].Value.ToString();
+                FrmUtas.cbJelentkezes.Text = dgvUtasLista[3, e.RowIndex].Value.ToString();
+                this.Close();
+            }
+        }
     }
 }

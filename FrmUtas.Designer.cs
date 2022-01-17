@@ -65,36 +65,41 @@
             this.tsmiKereses.Image = global::WFA220114.Properties.Resources.keres;
             this.tsmiKereses.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsmiKereses.Name = "tsmiKereses";
-            this.tsmiKereses.Size = new System.Drawing.Size(95, 61);
+            this.tsmiKereses.Size = new System.Drawing.Size(86, 61);
             this.tsmiKereses.Text = "Keresés";
             this.tsmiKereses.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsmiKereses.Click += new System.EventHandler(this.TsmiKereses_Click);
             // 
             // tsmiMentes
             // 
             this.tsmiMentes.Image = global::WFA220114.Properties.Resources.ment;
             this.tsmiMentes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsmiMentes.Name = "tsmiMentes";
-            this.tsmiMentes.Size = new System.Drawing.Size(95, 61);
+            this.tsmiMentes.Size = new System.Drawing.Size(86, 61);
             this.tsmiMentes.Text = "Mentés";
             this.tsmiMentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsmiMentes.Click += new System.EventHandler(this.TsmiMentes_Click);
             // 
             // tsmiTorles
             // 
+            this.tsmiTorles.Enabled = false;
             this.tsmiTorles.Image = global::WFA220114.Properties.Resources.delete;
             this.tsmiTorles.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsmiTorles.Name = "tsmiTorles";
-            this.tsmiTorles.Size = new System.Drawing.Size(95, 61);
+            this.tsmiTorles.Size = new System.Drawing.Size(86, 61);
             this.tsmiTorles.Text = "Törlés";
             this.tsmiTorles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsmiTorles.Click += new System.EventHandler(this.TsmiTorles_Click);
             // 
             // tsmiUresUrlap
             // 
             this.tsmiUresUrlap.Image = global::WFA220114.Properties.Resources.ures;
             this.tsmiUresUrlap.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsmiUresUrlap.Name = "tsmiUresUrlap";
-            this.tsmiUresUrlap.Size = new System.Drawing.Size(95, 61);
+            this.tsmiUresUrlap.Size = new System.Drawing.Size(86, 61);
             this.tsmiUresUrlap.Text = "Üres Űrlap";
             this.tsmiUresUrlap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsmiUresUrlap.Click += new System.EventHandler(this.TsmiUresUrlap_Click);
             // 
             // tbNev
             // 
@@ -162,6 +167,7 @@
             this.tbUtasKod.Name = "tbUtasKod";
             this.tbUtasKod.Size = new System.Drawing.Size(111, 26);
             this.tbUtasKod.TabIndex = 1;
+            this.tbUtasKod.TextChanged += new System.EventHandler(this.TbUtasKod_TextChanged);
             // 
             // FrmUtas
             // 
@@ -197,13 +203,13 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiMentes;
         private System.Windows.Forms.ToolStripMenuItem tsmiTorles;
         private System.Windows.Forms.ToolStripMenuItem tsmiUresUrlap;
-        private System.Windows.Forms.TextBox tbNev;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox rtbCim;
-        private System.Windows.Forms.ComboBox cbJelentkezes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbUtasKod;
+        internal System.Windows.Forms.TextBox tbNev;
+        internal System.Windows.Forms.RichTextBox rtbCim;
+        internal System.Windows.Forms.ComboBox cbJelentkezes;
+        internal System.Windows.Forms.TextBox tbUtasKod;
     }
 }

@@ -13,15 +13,20 @@ namespace WFA220114
 {
     public partial class FrmUtas : Form
     {
-        public FrmUtas()
+        public FrmUtas(string uKod, string nev, string cim, string tKod)
         {
             InitializeComponent();
+            tbUtasKod.Text = uKod;
+            tbNev.Text = nev;
+            rtbCim.Text = cim;
+            cbJelentkezes.Text = tKod;
         }
 
         private void FrmUtas_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.utas;
 
+            #region combo box
             using (var conn = new SqlConnection(Program.ConnectionString))
             {
                 var kezd = Program.KamuDatum.ToString("yyyy-MM-01");
@@ -38,6 +43,50 @@ namespace WFA220114
                     cbJelentkezes.Items.Add(r[0]);
                 }
             }
+            #endregion
         }
+
+        private void TsmiKereses_Click(object sender, EventArgs e)
+            => new FrmUtasLista(true, this).ShowDialog();
+
+        private void TsmiMentes_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbUtasKod.Text))
+            {
+                //insert
+            }
+            else
+            {
+                //update
+            }
+        }
+
+        private void TsmiTorles_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(
+                text: "Bizti törölni szeretnéd?",
+                caption: "TÖRLÉS",
+                buttons: MessageBoxButtons.YesNo,
+                icon: MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                //delete
+                MezokTorlese();
+            }
+        }
+
+        private void MezokTorlese()
+        {
+            tbUtasKod.Text = null;
+            tbNev.Text = null;
+            rtbCim.Text = null;
+            cbJelentkezes.SelectedIndex = -1;
+            cbJelentkezes.Text = null;
+        }
+
+        private void TsmiUresUrlap_Click(object sender, EventArgs e)
+            => MezokTorlese();
+
+        private void TbUtasKod_TextChanged(object sender, EventArgs e)
+            => tsmiTorles.Enabled = !string.IsNullOrEmpty(tbUtasKod.Text);
     }
 }
