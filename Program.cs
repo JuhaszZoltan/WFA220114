@@ -13,6 +13,9 @@ namespace WFA220114
             "Initial Catalog=utiroda;" +
             "Integrated Security=True;";
 
+        internal static DateTime KamuDatum =>
+            new DateTime(2015, 10, 11);
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

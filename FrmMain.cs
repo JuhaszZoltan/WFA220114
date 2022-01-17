@@ -13,7 +13,6 @@ namespace WFA220114
 {
     public partial class FrmMain : Form
     {
-        private DateTime _kamuDatum = new DateTime(2015, 10, 11);
         public FrmMain()
         {
             InitializeComponent();
@@ -22,7 +21,7 @@ namespace WFA220114
         private void FrmMain_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.logo;
-            lblDatum.Text = $"{_kamuDatum.ToString("yyyy. MMMM dd.")}";
+            lblDatum.Text = $"{Program.KamuDatum.ToString("yyyy. MMMM dd.")}";
 
             using (var conn = new SqlConnection(Program.ConnectionString))
             {
@@ -34,7 +33,7 @@ namespace WFA220114
                     "INNER JOIN szallas ON szallas = sz_kod " +
                     "INNER JOIN utvonal ON utvonal = ut_kod " +
                     //$"WHERE kezdet >= '{DateTime.Now.ToString("yyyy-MM-01")};'",
-                    $"WHERE kezdet >= '{_kamuDatum.ToString("yyyy-MM-01")}';",
+                    $"WHERE kezdet >= '{Program.KamuDatum.ToString("yyyy-MM-01")}';",
                     conn).ExecuteReader();
 
                 while (r.Read())
