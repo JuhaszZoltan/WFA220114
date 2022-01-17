@@ -20,15 +20,17 @@ namespace WFA220114
 
         private void FrmUtas_Load(object sender, EventArgs e)
         {
-            this.Icon = Properties.Resources.logo;
+            this.Icon = Properties.Resources.utas;
 
             using (var conn = new SqlConnection(Program.ConnectionString))
             {
+                var kezd = Program.KamuDatum.ToString("yyyy-MM-01");
+                var vege = Program.KamuDatum.AddMonths(2).ToString("yyyy-MM-01");
+
                 conn.Open();
                 var r = new SqlCommand(
                     "SELECT t_kod FROM tura " +
-                    //$"WHERE kezdet >= '{DateTime.Now.ToString("yyyy-MM-01")};'",
-                    $"WHERE kezdet >= '{Program.KamuDatum.ToString("yyyy-MM")}' AND ;",
+                    $"WHERE kezdet >= '{kezd}' AND kezdet < '{vege}';",
                     conn).ExecuteReader();
 
                 while (r.Read())

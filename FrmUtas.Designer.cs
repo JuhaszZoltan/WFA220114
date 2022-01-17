@@ -46,17 +46,17 @@
             // 
             // msUtas
             // 
-            this.msUtas.Dock = System.Windows.Forms.DockStyle.None;
+            this.msUtas.Dock = System.Windows.Forms.DockStyle.Right;
             this.msUtas.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.msUtas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiKereses,
             this.tsmiMentes,
             this.tsmiTorles,
             this.tsmiUresUrlap});
-            this.msUtas.Location = new System.Drawing.Point(440, 37);
+            this.msUtas.Location = new System.Drawing.Point(473, 0);
             this.msUtas.Name = "msUtas";
-            this.msUtas.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.msUtas.Size = new System.Drawing.Size(105, 252);
+            this.msUtas.Padding = new System.Windows.Forms.Padding(9, 30, 0, 3);
+            this.msUtas.Size = new System.Drawing.Size(105, 336);
             this.msUtas.TabIndex = 0;
             this.msUtas.Text = "menuStrip1";
             // 
@@ -181,7 +181,7 @@
             this.MainMenuStrip = this.msUtas;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmUtas";
-            this.Text = "FrmUtas";
+            this.Text = "Utas";
             this.Load += new System.EventHandler(this.FrmUtas_Load);
             this.msUtas.ResumeLayout(false);
             this.msUtas.PerformLayout();

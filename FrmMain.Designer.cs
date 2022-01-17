@@ -80,14 +80,16 @@
             // tsmiSzerkesztes
             // 
             this.tsmiSzerkesztes.Name = "tsmiSzerkesztes";
-            this.tsmiSzerkesztes.Size = new System.Drawing.Size(160, 26);
+            this.tsmiSzerkesztes.Size = new System.Drawing.Size(180, 26);
             this.tsmiSzerkesztes.Text = "Szerkesztés";
+            this.tsmiSzerkesztes.Click += new System.EventHandler(this.TsmiSzerkesztes_Click);
             // 
             // tsmiKereses
             // 
             this.tsmiKereses.Name = "tsmiKereses";
-            this.tsmiKereses.Size = new System.Drawing.Size(160, 26);
+            this.tsmiKereses.Size = new System.Drawing.Size(180, 26);
             this.tsmiKereses.Text = "Keresés";
+            this.tsmiKereses.Click += new System.EventHandler(this.TsmiKereses_Click);
             // 
             // tsmiIdegenvezeto
             // 
